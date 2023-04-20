@@ -1,0 +1,11 @@
+.productImage {
+    padding: 10px;
+    width: 100%;
+    justify-self: center;
+
+}
+
+.title {
+    padding: 10px;
+    text-align: center;
+}
