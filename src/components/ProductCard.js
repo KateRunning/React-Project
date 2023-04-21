@@ -5,8 +5,11 @@ import Toad from '../assets/toad.jpg';
 import styles from './ProductDetails.css';
 
 
-export default function ProductCard({ product, removeFromCart }) {
+export default function ProductCard({ id, product}) {
     
+// const handleDelete = () => {
+//     removeFromCart(id);
+// }
     // let { productId } = useParams()
     // productId = parseInt(productId)
 
@@ -25,7 +28,7 @@ export default function ProductCard({ product, removeFromCart }) {
                         {product.price}
                     </Card.Text>
                     <Button variant="outline-primary">Details</Button>
-                    <Button variant="outline-danger" onClick={() => removeFromCart(product) }>Remove</Button>
+                    {/* <Button variant="outline-danger" onClick={() => removeFromCart(product.id)}>Remove</Button> */}
                 </Card.Body>
             </Card>
         </Link>

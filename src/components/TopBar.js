@@ -20,7 +20,7 @@ export default function TopBar() {
             navbarScroll
           >
             <Nav.Link as={Link} to='/'>Home</Nav.Link>
-            <Nav.Link href="#action2">About</Nav.Link>
+            <Nav.Link as={Link} to='/reviews'>Reviews</Nav.Link>
             <NavDropdown title="Shop" id="navbarScrollingDropdown">
               <NavDropdown.Item href="#action3">Clases</NavDropdown.Item>
               <NavDropdown.Item href="#action4">
