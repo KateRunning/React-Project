@@ -1,10 +1,16 @@
 import React from 'react';
-import ProductCard from './ProductCard';
+import KnitAndGather from '../assets/knitandgathercircle.png';
+import { Col, Image } from 'react-bootstrap'
 
-export default function HomePage({ productList }) {
+export default function HomePage() {
   return (
-    <div>
-        { productList.map((product, i) => <ul key={i}><ProductCard product={product}/></ul>)}
-    </div>
+    <Col className="d-flex justify-content-center m-4">
+      <Image
+        img src={KnitAndGather} alt="cur"
+        width='25%'
+      />
+    </Col>
   )
 }
+
+

@@ -9,15 +9,6 @@ export default function ShoppingCart({ cart, product, removeFromCart }) {
         { cart.map((product, i) => <ul key={i}><ProductCard product={product}/>
         <Button variant="outline-danger" onClick={() => removeFromCart(product.id)}>Remove</Button>
         </ul>)}
-        <>
-        {/* <Button variant="outline-danger" onClick={() => removeFromCart(product.id)}>Remove</Button> */}
-        {/* { cart.map((product, id) => (
-                <ul className="list" key={id}>
-
-                    <Button variant="outline-danger" onClick={() => removeFromCart(product.id)}>Remove</Button>
-                </ul>
-            ))} */}
-        </>
     </div>
   )
 }

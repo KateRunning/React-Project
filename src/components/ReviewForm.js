@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from 'react';
+import { Button } from 'react-bootstrap'
 
 
 const ReviewForm = (props) => {
@@ -24,14 +25,15 @@ const ReviewForm = (props) => {
     return (
         <>
             <input type="text" className="form mt-3" onChange={handleChange} value={review} ></input>
-            <button className="btn btn-warning m-5" onClick={handleEvent}>Leave Review!</button>
+            <Button variant="btn btn-outline-success m-5" onClick={handleEvent}>Leave a Review!</Button>
 
             {allReviews.map((review, id) => (
                 <li className="list" key={id}>
                     {review}
-                    <button className='btn btn-danger btn-sm ms-5' id={id} onClick={() => handleDelete(id)} >
+                    <Button variant='btn btn-outline-danger btn-sm ms-5' id={id} onClick={() => handleDelete(id)} >
                         Delete
-                    </button>
+                    </Button>
+                    
                 </li>
             ))}
         </>

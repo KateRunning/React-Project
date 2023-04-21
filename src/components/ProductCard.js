@@ -27,8 +27,7 @@ export default function ProductCard({ id, product}) {
                     <Card.Text>
                         {product.price}
                     </Card.Text>
-                    <Button variant="outline-primary">Details</Button>
-                    {/* <Button variant="outline-danger" onClick={() => removeFromCart(product.id)}>Remove</Button> */}
+                    <Button variant="success">Details</Button>
                 </Card.Body>
             </Card>
         </Link>

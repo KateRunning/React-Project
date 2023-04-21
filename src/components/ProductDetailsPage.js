@@ -18,7 +18,7 @@ export default function ProductDetailsPage({ productList, addToCart }) {
                 <h4>{product.title}</h4>
                 <p>Made from birch. Check your knitting needle size from US 00 - 17</p>
                 <h5>{product.price}</h5>
-                <Button variant="outline-primary"
+                <Button variant="success"
                 onClick={() => addToCart(product) }
 
               > 

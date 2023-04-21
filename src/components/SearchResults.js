@@ -11,7 +11,7 @@ export default function SearchResults({ productList }) {
   return (
     <>
     <Row>
-    { SearchResults.map(product => <ProductCard product={product} key={product.id}/>)}
+    { SearchResults.map(product => <ProductCard product={product.title} key={product.id}/>)}
     </Row>
     </>
   )

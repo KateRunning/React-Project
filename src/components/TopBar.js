@@ -5,12 +5,14 @@ import { Form } from 'react-bootstrap';
 import { Nav } from 'react-bootstrap';
 import { Navbar } from 'react-bootstrap';
 import { NavDropdown } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBasketShopping } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
 export default function TopBar() {
   return (
-    <Navbar bg="light" expand="lg">
-      <Container>
+    <Navbar className="navbar navbar-light bg-warning" expand="lg" >
+      <Container >
         <Navbar.Brand as={Link} to='/'>Knit & Gather</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
@@ -20,7 +22,10 @@ export default function TopBar() {
             navbarScroll
           >
             <Nav.Link as={Link} to='/'>Home</Nav.Link>
+            <Nav.Link as={Link} to='/shop'>Shop</Nav.Link>
+            <Nav.Link as={Link} to='/classes'>Classes</Nav.Link>
             <Nav.Link as={Link} to='/reviews'>Reviews</Nav.Link>
+            
             <NavDropdown title="Shop" id="navbarScrollingDropdown">
               <NavDropdown.Item href="#action3">Clases</NavDropdown.Item>
               <NavDropdown.Item href="#action4">
@@ -31,7 +36,7 @@ export default function TopBar() {
                 Something else here
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link as={Link} to='/cart'>Cart</Nav.Link>
+            <Nav.Link as={Link} to='/cart'><FontAwesomeIcon className="ms-2 me-2" icon={faBasketShopping} />Cart</Nav.Link>
             
           </Nav>
           <Form className="d-flex">
@@ -41,7 +46,7 @@ export default function TopBar() {
               className="me-2"
               aria-label="Search"
             />
-            <Button variant="outline-primary">Search</Button>
+            <Button variant="info">Search</Button>
           </Form>
         </Navbar.Collapse>
       </Container>

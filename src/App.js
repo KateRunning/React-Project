@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import TopBar from "./components/TopBar";
 import HomePage from "./components/HomePage";
+import ShopPage from "./components/ShopPage";
 import ProductDetailsPage from "./components/ProductDetailsPage";
 import SearchResults from "./components/SearchResults";
 import { Container } from "react-bootstrap";
@@ -10,6 +11,7 @@ import ShoppingCart from "./components/ShoppingCart";
 import { deleteProduct } from "./components/EditProduct";
 import Commerce from '@chec/commerce.js';
 import ReviewForm from "./components/ReviewForm";
+import ClassPage from "./components/ClassPage";
 let nextId = 10;
 
 export default function App() {
@@ -64,7 +66,9 @@ export default function App() {
       <TopBar />
       <Container>
         <Routes>
-          <Route path='/' element={<HomePage productList={productList} />} />
+          <Route path='/' element={<HomePage />} />
+          <Route path='/shop' element={<ShopPage productList={productList} />} />
+          <Route path='/classes' element={<ClassPage />} />
           <Route path='/reviews' element={<ReviewForm />} />
           <Route path='/product/:productId' element={<ProductDetailsPage productList={productList} addToCart={addToCart} />} />
           <Route path='/search/:searchQuery' element={<SearchResults productList={productList} />} />
