@@ -6,7 +6,7 @@ export default function HomePage() {
   return (
     <Col className="d-flex justify-content-center m-4">
       <Image
-        img src={KnitAndGather} alt="cur"
+        img="true" src={KnitAndGather} alt="cur"
         width='25%'
       />
     </Col>
