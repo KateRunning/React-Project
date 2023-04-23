@@ -12,7 +12,9 @@ export default function ClassPage() {
     const [ideas, setIdeas] = useState([]); //storing object from above
     const [ideaId, setIdeaId] = useState(null); 
 
-    const uniqueKey = uuidV4()
+    const [showModal, setShowModal] = useState(false);
+
+    // const uniqueKey = uuidV4()
 
     function handleIdea(e) {
         setIdea(
@@ -34,7 +36,7 @@ export default function ClassPage() {
 
     const handleChange = (data) => {
         console.log(data)
-        const newIdea = { teach, idea, name, id: uniqueKey }
+        const newIdea = { teach, idea, name, ideaId }
         fetch(USER_DATA, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -51,13 +53,13 @@ export default function ClassPage() {
     function getIdeas() {
         fetch(USER_DATA).then((result) => {
             result.json().then((resp) => {
+            // debugger
             setIdeas(resp)
-            setIdea(resp[0].idea)
-            setName(resp[0].name)
-            setTeach(resp[0].teach)
-            setIdeaId(resp[0].id)
-            // .then((data) => data.json())
-            // .then((data) => setIdeas(data))
+            // setIdea(resp[0].idea) //look into this
+            // setName(resp[0].name)
+            // setTeach(resp[0].teach)
+            // setIdeaId(resp[0].id)
+
         })
     })
     }
@@ -75,6 +77,7 @@ export default function ClassPage() {
 
     function onEdit(id) 
     {
+        setShowModal(true)
         console.warn("function", ideas[id-1])
         let item=ideas[id-1];
         setIdea(item.idea)
@@ -85,7 +88,8 @@ export default function ClassPage() {
 
     function updateIdea()
     {
-        let item={idea, name, teach, ideaId}
+        let item={idea, name, teach}
+        
         console.warn("item", item)
         fetch(`https://6406aea577c1a905a0e079b5.mockapi.io/V1/knitting/${ideaId}`, {
             method: 'PUT',
@@ -147,7 +151,7 @@ export default function ClassPage() {
                 className="modal show"
                 style={{ display: 'block', position: 'initial' }}
             >
-                <Modal.Dialog>
+                <Modal show={showModal} onHide={() => setShowModal(false)}>
                     <Modal.Header>
                         <Modal.Title>Edit Idea</Modal.Title>
                     </Modal.Header>
@@ -161,14 +165,12 @@ export default function ClassPage() {
 
                     <Modal.Footer>
                         <Button variant="success" onClick={updateIdea}>Save changes</Button>
+                        <Button variant="warning" onClick={() => setShowModal(false)}>Close</Button>
 
                     </Modal.Footer>
-                </Modal.Dialog>
+                </Modal>
             </div>
         </div>
-
-
-
 
     )
 }

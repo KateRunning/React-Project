@@ -1,11 +1,12 @@
 import React from "react";
 import { useState } from 'react';
 import { Button } from 'react-bootstrap'
+import useLocalStorage from "../hooks/useLocalStorage";
 
 
 const ReviewForm = (props) => {
-    const [review, setReview] = useState(''); //useState = hook
-    const [allReviews, setAllReviews] = useState([]) //move to movieList
+    const [review, setReview] = useLocalStorage('review',''); //useState = hook
+    const [allReviews, setAllReviews] = useLocalStorage('allReviews',[]) //move to movieList
     // setReview(review.filter(review => review.value !== valueToDelete))
     //function to handle event change
     const handleChange = (e) => {

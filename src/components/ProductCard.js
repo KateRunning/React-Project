@@ -2,6 +2,7 @@ import React, { useState }  from 'react';
 import { Card, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Toad from '../assets/toad.jpg';
+import Yarn from '../assets/yarn-ball.jpg';
 import styles from './ProductDetails.css';
 
 

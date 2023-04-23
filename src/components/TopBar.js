@@ -8,8 +8,9 @@ import { NavDropdown } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBasketShopping } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
+import CartBadge from './CartBadge';
 
-export default function TopBar() {
+export default function TopBar({ cart }) {
   return (
     <Navbar className="navbar navbar-light bg-warning" expand="lg" >
       <Container >
@@ -36,7 +37,7 @@ export default function TopBar() {
                 Something else here
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link as={Link} to='/cart'><FontAwesomeIcon className="ms-2 me-2" icon={faBasketShopping} />Cart</Nav.Link>
+            <Nav.Link as={Link} to='/cart'><FontAwesomeIcon className="ms-2 me-2" icon={faBasketShopping} /><CartBadge cart={cart}/>Cart</Nav.Link>
             
           </Nav>
           <Form className="d-flex">
